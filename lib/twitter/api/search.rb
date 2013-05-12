@@ -32,6 +32,10 @@ module Twitter
         object_from_response(Twitter::SearchResults, :get, "/1.1/search/tweets.json", options.merge(:q => q))
       end
 
+      def search_and_get_hash
+        object_from_response(Hash, :get, "/1.1/search/tweets.json", options.merge(:q => q))
+      end
+
     end
   end
 end

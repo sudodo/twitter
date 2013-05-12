@@ -80,7 +80,8 @@ module Twitter
       # @return [Object]
       def object_from_response(klass, request_method, path, options={})
         response = send(request_method.to_sym, path, options)
-        klass.from_response(response)
+        # TODO change here. by sudodo
+        klass == Hash ? response: klass.from_response(response)
       end
 
       # @param collection_name [Symbol]
